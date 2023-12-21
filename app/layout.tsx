@@ -17,24 +17,16 @@ export default function RootLayout(props: {
   modal: React.ReactNode
 }) {
   return (
-    // <html lang='en'>
-    //   <body className={GeistSans.className} style={{ padding: '50px' }}>
-    //     <div className='space-y-6 lg:grid lg:grid-cols-2 lg:gap-6 lg:space-y-0'>
-    //       {props.children}
-    //       {props.modal}
-    //     </div>
-    //   </body>
-    // </html>
     <html lang='en'>
       <body
         className={cn(GeistSans.className, 'dark')}
         suppressHydrationWarning
       >
         <div className='bg-background'>
-          <div className='mx-auto flex min-h-screen max-w-5xl flex-col px-4'>
+          <div className='mx-auto flex min-h-screen max-w-7xl flex-col px-4'>
             <Navbar />
             <main className='flex-1'>{props.children}</main>
-            {props.modal}
+            {/* {props.modal} */}
             <footer>
               <div className='flex items-center justify-center py-8'>
                 <span className='text-sm text-gray-400'>
@@ -50,7 +42,6 @@ export default function RootLayout(props: {
                 </span>
               </div>
             </footer>
-
           </div>
         </div>
       </body>
