@@ -1,6 +1,14 @@
+import { type CSSProperties } from 'react'
 import { COMPONENTS_LIST } from '@/data/component-list'
+import clsx from 'clsx'
+import { twMerge } from 'tailwind-merge'
 
+import { BoxesContainer } from '@/components/background/boxes'
 import { CardComponent } from '@/components/card-component'
+
+type WrapperStyle = CSSProperties & {
+  '--bottom': string
+}
 
 export default function Home() {
   return (
@@ -18,9 +26,14 @@ export default function Home() {
         </div>
       </section>
       <div className='mx-auto max-w-7xl py-10'>
-        <div className='grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3'>
+        <div className='grid grid-cols-1 gap-16 md:grid-cols-2 lg:grid-cols-3'>
           {COMPONENTS_LIST.map((item, index) => (
-            <CardComponent key={index} slug={item.slug} name={item.name}>
+            <CardComponent
+              key={index}
+              slug={item.slug}
+              name={item.name}
+              description={item.description}
+            >
               <item.component />
             </CardComponent>
           ))}

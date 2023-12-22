@@ -17,7 +17,7 @@ export const CardShimmer = () => {
     <div
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className='relative h-52 w-52 overflow-hidden rounded-xl border border-slate-800 p-[1px] backdrop-blur-3xl'
+      className='relative h-52 w-52 overflow-hidden rounded-xl border p-[1px] backdrop-blur-3xl'
     >
       <span
         className={cn(

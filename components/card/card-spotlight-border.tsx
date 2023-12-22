@@ -2,7 +2,7 @@
 
 import React, { useRef, useState } from 'react'
 
-export const CardSpotlight = () => {
+export const CardSpotlightBorder = () => {
   const divRef = useRef<HTMLDivElement>(null)
   const [isFocused, setIsFocused] = useState(false)
   const [position, setPosition] = useState({ x: 0, y: 0 })
@@ -36,23 +36,27 @@ export const CardSpotlight = () => {
   }
 
   return (
-    <div
-      ref={divRef}
-      onMouseMove={handleMouseMove}
-      onFocus={handleFocus}
-      onBlur={handleBlur}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      className='relative flex h-52 w-52 items-center justify-center overflow-hidden rounded-xl border bg-background px-8 py-16 shadow-2xl'
-    >
+    <div className='relative h-52 w-52'>
       <div
-        className='pointer-events-none absolute -inset-px opacity-0 transition duration-300'
+        onMouseMove={handleMouseMove}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        className='flex h-full w-full items-center justify-center overflow-hidden rounded-xl border bg-black px-8 py-16 shadow-2xl'
+      >
+        <p className='text-sm text-slate-200'>Hover me</p>
+      </div>
+      <div
+        ref={divRef}
+        className='pointer-events-none absolute left-0 top-0 z-10 h-full w-full cursor-default rounded-xl border border-[#0ea5e9] bg-[transparent] p-3.5 opacity-0  transition-opacity duration-500 placeholder:select-none'
         style={{
+          border: '1px solid #0ea5e9',
           opacity,
-          background: `radial-gradient(400px circle at ${position.x}px ${position.y}px, rgba(255, 255, 255,.1), transparent 40%)`,
+          WebkitMaskImage: `radial-gradient(50% 60px at ${position.x}px ${position.y}px, black 45%, transparent)`,
         }}
       />
-      <p className='text-sm text-slate-200'>Hover Me</p>
     </div>
+
   )
 }
