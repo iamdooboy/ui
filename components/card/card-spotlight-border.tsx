@@ -6,7 +6,7 @@ export const CardSpotlightBorder = () => {
   const divRef = useRef<HTMLDivElement>(null)
   const [isFocused, setIsFocused] = useState(false)
   const [position, setPosition] = useState({ x: 0, y: 0 })
-  const [opacity, setOpacity] = useState(0)
+  const [opacity, setOpacity] = useState(100)
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!divRef.current || isFocused) return
@@ -32,24 +32,24 @@ export const CardSpotlightBorder = () => {
   }
 
   const handleMouseLeave = () => {
-    setOpacity(0)
+    setOpacity(100)
   }
 
   return (
-    <div className='relative h-52 w-52'>
+    <div className='relative h-52 w-40 rounded-xl '>
       <div
         onMouseMove={handleMouseMove}
         onFocus={handleFocus}
         onBlur={handleBlur}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className='flex h-full w-full items-center justify-center overflow-hidden rounded-xl border bg-black px-8 py-16 shadow-2xl'
+        className='flex h-full w-full items-center justify-center rounded-xl border bg-background'
       >
-        <p className='text-sm text-slate-200'>Hover me</p>
+        <span className='text-md text-card-foreground tracking-wider font-light'>Hover me</span>
       </div>
       <div
         ref={divRef}
-        className='pointer-events-none absolute left-0 top-0 z-10 h-full w-full cursor-default rounded-xl border border-[#0ea5e9] bg-[transparent] p-3.5 opacity-0  transition-opacity duration-500 placeholder:select-none'
+        className='pointer-events-none absolute left-0 top-0 z-10 h-full w-full cursor-default rounded-xl border border-[#0ea5e9] bg-[transparent] p-3.5 opacity-0 transition-opacity duration-500 placeholder:select-none'
         style={{
           border: '1px solid #0ea5e9',
           opacity,
@@ -57,6 +57,5 @@ export const CardSpotlightBorder = () => {
         }}
       />
     </div>
-
   )
 }

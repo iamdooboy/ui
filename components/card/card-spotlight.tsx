@@ -6,7 +6,7 @@ export const CardSpotlight = () => {
   const divRef = useRef<HTMLDivElement>(null)
   const [isFocused, setIsFocused] = useState(false)
   const [position, setPosition] = useState({ x: 0, y: 0 })
-  const [opacity, setOpacity] = useState(0)
+  const [opacity, setOpacity] = useState(100)
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!divRef.current || isFocused) return
@@ -32,7 +32,7 @@ export const CardSpotlight = () => {
   }
 
   const handleMouseLeave = () => {
-    setOpacity(0)
+    setOpacity(100)
   }
 
   return (
@@ -43,8 +43,11 @@ export const CardSpotlight = () => {
       onBlur={handleBlur}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className='relative flex h-52 w-52 items-center justify-center overflow-hidden rounded-xl border bg-background px-8 py-16 shadow-2xl'
+      className='relative h-52 w-40 rounded-xl overflow-hidden'
     >
+      <div className='flex h-full w-full items-center justify-center rounded-xl border bg-background'>
+        <span className='text-md text-card-foreground tracking-wider font-light'>Hover me</span>
+      </div>
       <div
         className='pointer-events-none absolute -inset-px opacity-0 transition duration-300'
         style={{
@@ -52,7 +55,6 @@ export const CardSpotlight = () => {
           background: `radial-gradient(400px circle at ${position.x}px ${position.y}px, rgba(255, 255, 255,.1), transparent 40%)`,
         }}
       />
-      <p className='text-sm text-slate-200'>Hover Me</p>
     </div>
   )
 }

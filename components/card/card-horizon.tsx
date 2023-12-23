@@ -17,7 +17,7 @@ export const CardHorizon = () => {
     <div
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className='relative h-52 w-52'
+      className='relative h-52 w-40'
     >
       <div className='absolute top-0 flex w-full justify-center'>
         <div
@@ -27,8 +27,10 @@ export const CardHorizon = () => {
           )}
         />
       </div>
-      <div className='flex h-full items-center justify-center rounded-lg border border-slate-800 bg-black'>
-        <p className='text-sm text-slate-200'>Hover me</p>
+      <div className='flex h-full w-full items-center justify-center rounded-xl border bg-background'>
+        <span className='text-md text-card-foreground tracking-wider font-light'>
+          Hover me
+        </span>
       </div>
     </div>
   )

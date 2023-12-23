@@ -43,7 +43,7 @@ export const CardParallax = () => {
   return (
     <>
       <div
-        className='relative h-52 w-52 rounded-xl transition-[all_400ms_cubic-bezier(0.03,0.98,0.52,0.99)_0s] will-change-transform'
+        className='relative h-52 w-40 rounded-xl transition-[all_400ms_cubic-bezier(0.03,0.98,0.52,0.99)_0s] will-change-transform'
         onMouseMove={onMouseMove}
         onMouseLeave={onMouseLeave}
         style={{
@@ -51,9 +51,9 @@ export const CardParallax = () => {
           transition: 'all 400ms cubic-bezier(0.03, 0.98, 0.52, 0.99) 0s',
         }}
       >
-        <div className='group relative flex h-full w-full select-none items-center justify-center rounded-lg border text-card-foreground shadow-sm bg-black text-sm font-light text-slate-300'>
-          <div className='duration-600 absolute -inset-0.5 -z-10 rounded-lg bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 opacity-0 blur transition group-hover:opacity-75' />
-          <span className='text-md bg-gradient-to-t from-neutral-400 to-white bg-clip-text font-bold text-transparent'>
+        <div className='group flex h-full w-full items-center justify-center rounded-lg border bg-background'>
+          <div className='duration-600 absolute -inset-0.5 -z-10 rounded-xl bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 blur transition opacity-75' />
+          <span className='text-md text-card-foreground tracking-wider font-light'>
             Hover me
           </span>
         </div>

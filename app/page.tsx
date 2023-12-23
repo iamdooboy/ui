@@ -1,14 +1,6 @@
-import { type CSSProperties } from 'react'
 import { COMPONENTS_LIST } from '@/data/component-list'
-import clsx from 'clsx'
-import { twMerge } from 'tailwind-merge'
 
-import { BoxesContainer } from '@/components/background/boxes'
 import { CardComponent } from '@/components/card-component'
-
-type WrapperStyle = CSSProperties & {
-  '--bottom': string
-}
 
 export default function Home() {
   return (
@@ -39,6 +31,9 @@ export default function Home() {
           ))}
         </div>
       </div>
+      {/* <div className='h-96 relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center rounded-lg'>
+        <BoxesContainer />
+      </div> */}
     </>
   )
 }

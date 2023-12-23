@@ -5,6 +5,7 @@ import { CardParallax } from '@/components/card/card-parallax'
 import { CardShimmer } from '@/components/card/card-shimmer'
 import { CardSpotlight } from '@/components/card/card-spotlight'
 import { CardSpotlightBorder } from '@/components/card/card-spotlight-border'
+import { InfiniteCarouselDemo } from '@/components/infinite-carousel'
 
 export const COMPONENTS_LIST = [
   {
@@ -43,5 +44,11 @@ export const COMPONENTS_LIST = [
     component: CardHorizon,
     slug: 'card-horizon-border',
     description: 'A subtle horizon top border effect on hover',
+  },
+  {
+    name: 'Infinite Carousel',
+    component: InfiniteCarouselDemo,
+    slug: 'infinite-carousel',
+    description: 'A carousel component with infinite motion ',
   },
 ]
