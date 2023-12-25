@@ -1,6 +1,6 @@
 'use client'
 
-import { MouseEvent, useCallback, useState } from 'react'
+import { MouseEvent, useMemo, useState } from 'react'
 
 function throttle<T extends (...args: any[]) => any>(
   func: T,
@@ -20,19 +20,22 @@ function throttle<T extends (...args: any[]) => any>(
 export const CardParallax = () => {
   const [rotate, setRotate] = useState({ x: 0, y: 0 })
 
-  const onMouseMove = useCallback(
-    throttle((e: MouseEvent<HTMLDivElement>) => {
-      const card = e.currentTarget
-      const box = card.getBoundingClientRect()
-      const x = e.clientX - box.left
-      const y = e.clientY - box.top
-      const centerX = box.width / 2
-      const centerY = box.height / 2
-      const rotateX = (y - centerY) / 4
-      const rotateY = (centerX - x) / 4
+  //using usecallback here to mitigate eslint warning
+  //usecallback(fn, deps) is equivalent to usememo(() => fn, deps).
+  const onMouseMove = useMemo(
+    () =>
+      throttle((e: MouseEvent<HTMLDivElement>) => {
+        const card = e.currentTarget
+        const box = card.getBoundingClientRect()
+        const x = e.clientX - box.left
+        const y = e.clientY - box.top
+        const centerX = box.width / 2
+        const centerY = box.height / 2
+        const rotateX = (y - centerY) / 4
+        const rotateY = (centerX - x) / 4
 
-      setRotate({ x: rotateX, y: rotateY })
-    }, 100),
+        setRotate({ x: rotateX, y: rotateY })
+      }, 100),
     []
   )
 
@@ -51,9 +54,9 @@ export const CardParallax = () => {
           transition: 'all 400ms cubic-bezier(0.03, 0.98, 0.52, 0.99) 0s',
         }}
       >
-        <div className='group flex h-full w-full items-center justify-center rounded-lg border bg-background'>
-          <div className='duration-600 absolute -inset-0.5 -z-10 rounded-xl bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 blur transition opacity-75' />
-          <span className='text-md text-card-foreground tracking-wider font-light'>
+        <div className='bg-background group flex h-full w-full items-center justify-center rounded-lg border'>
+          <div className='duration-600 absolute -inset-0.5 -z-10 rounded-xl bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 opacity-75 blur transition' />
+          <span className='text-md text-card-foreground font-light tracking-wider'>
             Hover me
           </span>
         </div>

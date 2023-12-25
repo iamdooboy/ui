@@ -43,9 +43,9 @@ export const CardSpotlightBorder = () => {
         onBlur={handleBlur}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className='flex h-full w-full items-center justify-center rounded-xl border bg-background'
+        className='bg-background flex h-full w-full items-center justify-center rounded-xl border'
       >
-        <span className='text-md text-card-foreground tracking-wider font-light'>Hover me</span>
+        <span className='text-md text-card-foreground font-light tracking-wider'>Hover me</span>
       </div>
       <div
         ref={divRef}
@@ -53,7 +53,7 @@ export const CardSpotlightBorder = () => {
         style={{
           border: '1px solid #0ea5e9',
           opacity,
-          WebkitMaskImage: `radial-gradient(50% 60px at ${position.x}px ${position.y}px, black 45%, transparent)`,
+          WebkitMaskImage: `radial-gradient(70% 90px at ${position.x}px ${position.y}px, black 45%, transparent)`,
         }}
       />
     </div>

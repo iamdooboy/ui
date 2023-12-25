@@ -22,13 +22,13 @@ export const CardHorizon = () => {
       <div className='absolute top-0 flex w-full justify-center'>
         <div
           className={cn(
-            'left-0 h-[1px] w-[10px] opacity-0 rounded-full bg-gradient-to-r from-[rgba(17,17,17,0)] via-yellow-100 to-[rgba(17,17,17,0)] transition-all duration-500',
+            'left-0 h-[1px] w-[10px] rounded-full bg-gradient-to-r from-[rgba(17,17,17,0)] via-yellow-100 to-[rgba(17,17,17,0)] opacity-0 transition-all duration-500',
             isHover && 'w-[100px] opacity-100 duration-500'
           )}
         />
       </div>
-      <div className='flex h-full w-full items-center justify-center rounded-xl border bg-background'>
-        <span className='text-md text-card-foreground tracking-wider font-light'>
+      <div className='bg-background flex h-full w-full items-center justify-center rounded-xl border'>
+        <span className='text-md text-card-foreground font-light tracking-wider'>
           Hover me
         </span>
       </div>

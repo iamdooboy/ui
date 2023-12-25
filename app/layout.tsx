@@ -23,24 +23,22 @@ export default function RootLayout(props: {
         suppressHydrationWarning
       >
         <div className='bg-background'>
-          <div className='mx-auto flex min-h-screen max-w-7xl flex-col px-4'>
+          <div className='px-4s mx-auto flex min-h-screen max-w-7xl flex-col'>
             <Navbar />
             <main className='flex-1'>{props.children}</main>
             {/* {props.modal} */}
-            <footer>
-              <div className='flex items-center justify-center py-8'>
-                <span className='text-sm text-gray-400'>
-                  Made by
-                  <a
-                    href='https://github.com/iamdooboy'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='ml-1 text-white'
-                  >
-                    Duy Le
-                  </a>
-                </span>
-              </div>
+            <footer className='mt-32 flex items-center justify-center py-8'>
+              <span className='text-sm text-gray-400'>
+                Made by
+                <a
+                  href='https://github.com/iamdooboy'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='ml-1 text-blue-400'
+                >
+                  Duy Le
+                </a>
+              </span>
             </footer>
           </div>
         </div>

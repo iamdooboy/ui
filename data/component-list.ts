@@ -1,4 +1,4 @@
-import { BoxesContainer } from '@/components/background/boxes'
+import { DynamicGridPatternDemo } from '@/components/background/dynamic-grid-pattern'
 import { MeteorsDemo } from '@/components/background/meteors'
 import { CardAnimatedBorder } from '@/components/card/card-animated-border'
 import { CardHorizon } from '@/components/card/card-horizon'
@@ -56,6 +56,12 @@ export const COMPONENTS_LIST = [
     name: 'Meteor Effect',
     component: MeteorsDemo,
     slug: 'meteor',
-    description: 'A meteor shower effect.',
+    description: 'A continuous meteor shower effect.',
+  },
+  {
+    name: 'Dynamic Grid Pattern',
+    component: DynamicGridPatternDemo,
+    slug: 'dynamic-grid-patttern',
+    description: 'A background grid pattern that highlights on hover.',
   },
 ]

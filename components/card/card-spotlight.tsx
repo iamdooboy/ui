@@ -43,10 +43,10 @@ export const CardSpotlight = () => {
       onBlur={handleBlur}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className='relative h-52 w-40 rounded-xl overflow-hidden'
+      className='relative h-52 w-40 overflow-hidden rounded-xl'
     >
-      <div className='flex h-full w-full items-center justify-center rounded-xl border bg-background'>
-        <span className='text-md text-card-foreground tracking-wider font-light'>Hover me</span>
+      <div className='bg-background flex h-full w-full items-center justify-center rounded-xl border'>
+        <span className='text-md text-card-foreground font-light tracking-wider'>Hover me</span>
       </div>
       <div
         className='pointer-events-none absolute -inset-px opacity-0 transition duration-300'
