@@ -1,4 +1,5 @@
 import { BoxesContainer } from '@/components/background/boxes'
+import { MeteorsDemo } from '@/components/background/meteors'
 import { CardAnimatedBorder } from '@/components/card/card-animated-border'
 import { CardHorizon } from '@/components/card/card-horizon'
 import { CardParallax } from '@/components/card/card-parallax'
@@ -37,18 +38,24 @@ export const COMPONENTS_LIST = [
     name: 'Card Animated Border',
     component: CardAnimatedBorder,
     slug: 'card-animate-border',
-    description: 'A continuous animated gradient border effect',
+    description: 'A continuous animated gradient border effect.',
   },
   {
     name: 'Card Horizon',
     component: CardHorizon,
     slug: 'card-horizon-border',
-    description: 'A subtle horizon top border effect on hover',
+    description: 'A subtle horizon top border effect on hover.',
   },
   {
     name: 'Infinite Carousel',
     component: InfiniteCarouselDemo,
     slug: 'infinite-carousel',
-    description: 'A carousel component with infinite motion ',
+    description: 'A carousel component with infinite motion.',
+  },
+  {
+    name: 'Meteor Effect',
+    component: MeteorsDemo,
+    slug: 'meteor',
+    description: 'A meteor shower effect.',
   },
 ]
