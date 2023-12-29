@@ -6,7 +6,7 @@ export function Navbar() {
   return (
     <header className='flex items-center justify-between py-8'>
       <Link href='/'>
-        <div className='text-xl text-white'>UI</div>
+        <div className='text-xl text-white'>Replicate</div>
       </Link>
       <nav className='flex gap-6'>
         <a

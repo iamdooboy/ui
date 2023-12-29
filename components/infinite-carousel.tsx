@@ -49,7 +49,7 @@ const logos = [
 const Logo = ({ name, img }: { name: string; img: string }) => {
   return (
     <div className={cn('h-12 w-12 cursor-pointer')}>
-      <Image src={img} alt={name} />
+      <img src={img} alt={name}/>
     </div>
   )
 }
