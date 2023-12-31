@@ -1,12 +1,12 @@
-import { DynamicGridPatternDemo } from '@/components/background/dynamic-grid-pattern'
-import { MeteorsDemo } from '@/components/background/meteors'
-import { CardAnimatedBorder } from '@/components/card/card-animated-border'
-import { CardHorizon } from '@/components/card/card-horizon'
-import { CardParallax } from '@/components/card/card-parallax'
-import { CardShimmer } from '@/components/card/card-shimmer'
-import { CardSpotlight } from '@/components/card/card-spotlight'
-import { CardSpotlightBorder } from '@/components/card/card-spotlight-border'
-import { InfiniteCarouselDemo } from '@/components/infinite-carousel'
+import { DynamicGridPatternDemo } from '@/components/examples/dynamic-grid-pattern'
+import { MeteorsDemo } from '@/components/examples/meteors'
+import { CardAnimatedBorder } from '@/components/examples/card-animated-border'
+import { CardHorizon } from '@/components/examples/card-horizon'
+import { CardParallax } from '@/components/examples/card-parallax'
+import { CardShimmer } from '@/components/examples/card-shimmer'
+import { CardSpotlight } from '@/components/examples/card-spotlight'
+import { CardSpotlightBorder } from '@/components/examples/card-spotlight-border'
+import { InfiniteCarouselDemo } from '@/components/examples/infinite-carousel'
 
 export const COMPONENTS_LIST = [
   {
