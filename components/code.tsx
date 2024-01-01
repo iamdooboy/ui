@@ -12,6 +12,3 @@ type CodeProps = {
 
   return <div dangerouslySetInnerHTML={{ __html: component }} />
 }
-
-// @NOTE: workaround for server component type
-// export default Code as unknown as (props: CodeProps) => JSX.Element
