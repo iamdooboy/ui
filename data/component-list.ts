@@ -1,3 +1,4 @@
+import { CardParallaxDemo } from '@/components/demos/card-parallax-demo'
 import { CardAnimatedBorder } from '@/components/examples/card-animated-border'
 import { CardHorizon } from '@/components/examples/card-horizon'
 import { CardParallax } from '@/components/examples/card-parallax'
@@ -11,7 +12,7 @@ import { MeteorsDemo } from '@/components/examples/meteors'
 export const COMPONENTS_LIST = [
   {
     name: 'Card Parallax',
-    component: CardParallax,
+    component: CardParallaxDemo,
     slug: 'card-parallax',
     description: 'A 3D tilt hover effect.',
   },

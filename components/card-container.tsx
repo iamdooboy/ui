@@ -7,7 +7,7 @@ type CardComponentProps = {
   description: string
 }
 
-export const CardComponent = ({
+export const CardContainer = ({
   children,
   slug,
   name,

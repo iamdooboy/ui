@@ -1,6 +1,6 @@
 import { COMPONENTS_LIST } from '@/data/component-list'
 
-import { CardComponent } from '@/components/card-component'
+import { CardContainer } from '@/components/card-container'
 
 export default function Home() {
   return (
@@ -20,14 +20,14 @@ export default function Home() {
       <div className='mx-auto max-w-7xl py-10'>
         <div className='grid grid-cols-1 gap-36 md:grid-cols-2 lg:grid-cols-3'>
           {COMPONENTS_LIST.map((item, index) => (
-            <CardComponent
+            <CardContainer
               key={index}
               slug={item.slug}
               name={item.name}
               description={item.description}
             >
               <item.component />
-            </CardComponent>
+            </CardContainer>
           ))}
         </div>
       </div>

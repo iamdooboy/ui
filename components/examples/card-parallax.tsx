@@ -1,6 +1,13 @@
 'use client'
 
-import { MouseEvent, useMemo, useState } from 'react'
+import * as React from 'react'
+
+import { cn } from '@/lib/utils'
+
+interface CardParallaxProps {
+  children?: React.ReactNode
+  className?: string
+}
 
 function throttle<T extends (...args: any[]) => any>(
   func: T,
@@ -17,14 +24,14 @@ function throttle<T extends (...args: any[]) => any>(
   }
 }
 
-export const CardParallax = () => {
-  const [rotate, setRotate] = useState({ x: 0, y: 0 })
+export const CardParallax = ({ className, children }: CardParallaxProps) => {
+  const [rotate, setRotate] = React.useState({ x: 0, y: 0 })
 
   //using usecallback here to mitigate eslint warning
   //usecallback(fn, deps) is equivalent to usememo(() => fn, deps).
-  const onMouseMove = useMemo(
+  const onMouseMove = React.useMemo(
     () =>
-      throttle((e: MouseEvent<HTMLDivElement>) => {
+      throttle((e: React.MouseEvent<HTMLDivElement>) => {
         const card = e.currentTarget
         const box = card.getBoundingClientRect()
         const x = e.clientX - box.left
@@ -44,23 +51,19 @@ export const CardParallax = () => {
   }
 
   return (
-    <>
-      <div
-        className='relative h-52 w-40 rounded-xl transition-[all_400ms_cubic-bezier(0.03,0.98,0.52,0.99)_0s] will-change-transform'
-        onMouseMove={onMouseMove}
-        onMouseLeave={onMouseLeave}
-        style={{
-          transform: `perspective(1000px) rotateX(${rotate.x}deg) rotateY(${rotate.y}deg) scale3d(1, 1, 1)`,
-          transition: 'all 400ms cubic-bezier(0.03, 0.98, 0.52, 0.99) 0s',
-        }}
-      >
-        <div className='bg-background group flex h-full w-full items-center justify-center rounded-lg border'>
-          <div className='duration-600 absolute -inset-0.5 -z-10 rounded-xl bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 opacity-75 blur transition' />
-          <span className='text-md text-card-foreground font-light tracking-wider'>
-            Hover me
-          </span>
-        </div>
-      </div>
-    </>
+    <div
+      className={cn(
+        'relative h-full w-full rounded-xl transition-[all_400ms_cubic-bezier(0.03,0.98,0.52,0.99)_0s] will-change-transform',
+        className
+      )}
+      onMouseMove={onMouseMove}
+      onMouseLeave={onMouseLeave}
+      style={{
+        transform: `perspective(1000px) rotateX(${rotate.x}deg) rotateY(${rotate.y}deg) scale3d(1, 1, 1)`,
+        transition: 'all 400ms cubic-bezier(0.03, 0.98, 0.52, 0.99) 0s',
+      }}
+    >
+      {children}
+    </div>
   )
 }
