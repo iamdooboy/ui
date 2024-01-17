@@ -1,12 +1,24 @@
 'use client'
 
-import React, { useRef, useState } from 'react'
+import * as React from 'react'
 
-export const CardSpotlight = () => {
-  const divRef = useRef<HTMLDivElement>(null)
-  const [isFocused, setIsFocused] = useState(false)
-  const [position, setPosition] = useState({ x: 0, y: 0 })
-  const [opacity, setOpacity] = useState(100)
+import { cn } from '@/lib/utils'
+
+interface CardSpotlightProps {
+  children?: React.ReactNode
+  className?: string
+  spotlightColor?: string
+}
+
+export const CardSpotlight = ({
+  className,
+  children,
+  spotlightColor,
+}: CardSpotlightProps) => {
+  const divRef = React.useRef<HTMLDivElement>(null)
+  const [isFocused, setIsFocused] = React.useState(false)
+  const [position, setPosition] = React.useState({ x: 0, y: 0 })
+  const [opacity, setOpacity] = React.useState(100)
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!divRef.current || isFocused) return
@@ -43,16 +55,17 @@ export const CardSpotlight = () => {
       onBlur={handleBlur}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className='relative h-52 w-40 overflow-hidden rounded-xl'
+      className={cn(
+        'bg-background relative h-full w-full overflow-hidden rounded-xl',
+        className
+      )}
     >
-      <div className='bg-background flex h-full w-full items-center justify-center rounded-xl border'>
-        <span className='text-md text-card-foreground font-light tracking-wider'>Hover me</span>
-      </div>
+      {children}
       <div
         className='pointer-events-none absolute -inset-px opacity-0 transition duration-300'
         style={{
           opacity,
-          background: `radial-gradient(400px circle at ${position.x}px ${position.y}px, rgba(255, 255, 255,.1), transparent 40%)`,
+          background: `radial-gradient(400px circle at ${position.x}px ${position.y}px, ${spotlightColor}, transparent 40%)`,
         }}
       />
     </div>

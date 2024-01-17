@@ -1,9 +1,8 @@
 import { CardParallaxDemo } from '@/components/demos/card-parallax-demo'
+import { CardSpotlightDemo } from '@/components/demos/care-spotlight-demo'
 import { CardAnimatedBorder } from '@/components/examples/card-animated-border'
 import { CardHorizon } from '@/components/examples/card-horizon'
-import { CardParallax } from '@/components/examples/card-parallax'
 import { CardShimmer } from '@/components/examples/card-shimmer'
-import { CardSpotlight } from '@/components/examples/card-spotlight'
 import { CardSpotlightBorder } from '@/components/examples/card-spotlight-border'
 import { DynamicGridPatternDemo } from '@/components/examples/dynamic-grid-pattern'
 import { InfiniteCarouselDemo } from '@/components/examples/infinite-carousel'
@@ -18,7 +17,7 @@ export const COMPONENTS_LIST = [
   },
   {
     name: 'Card Spotlight',
-    component: CardSpotlight,
+    component: CardSpotlightDemo,
     slug: 'card-spotlight',
     description: 'A spotlight effect that follows the mouse cursor on hover.',
   },
