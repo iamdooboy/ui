@@ -1,9 +1,9 @@
 import { CardParallaxDemo } from '@/components/demos/card-parallax-demo'
 import { CardSpotlightBorderDemo } from '@/components/demos/card-spotlight-border-demo'
-import { CardSpotlightDemo } from '@/components/demos/care-spotlight-demo'
+import { CardSpotlightDemo } from '@/components/demos/card-spotlight-demo'
 import { CardAnimatedBorder } from '@/components/examples/card-animated-border'
 import { CardHorizon } from '@/components/examples/card-horizon'
-import { CardShimmer } from '@/components/examples/card-shimmer'
+import { CardShimmerDemo } from '@/components/demos/card-shimmer-demo'
 import { DynamicGridPatternDemo } from '@/components/examples/dynamic-grid-pattern'
 import { InfiniteCarouselDemo } from '@/components/examples/infinite-carousel'
 import { MeteorsDemo } from '@/components/examples/meteors'
@@ -29,7 +29,7 @@ export const COMPONENTS_LIST = [
   },
   {
     name: 'Card Shimmer',
-    component: CardShimmer,
+    component: CardShimmerDemo,
     slug: 'card-shimmer',
     description:
       'A shimmering light that travels around the perimeter on hover.',
