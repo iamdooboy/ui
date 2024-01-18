@@ -9,7 +9,7 @@ export function CardItem({ text, className }: CardItemProps) {
   return (
     <div
       className={cn(
-        'bg-background group flex h-full w-full items-center justify-center rounded-lg border',
+        'bg-background flex h-full w-full items-center justify-center rounded-xl border',
         className
       )}
     >
