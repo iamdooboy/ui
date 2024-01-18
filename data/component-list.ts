@@ -37,13 +37,13 @@ export const COMPONENTS_LIST = [
   {
     name: 'Card Animated Border',
     component: CardAnimatedBorder,
-    slug: 'card-animate-border',
+    slug: 'card-animated-border',
     description: 'A continuous animated gradient border effect.',
   },
   {
     name: 'Card Horizon',
     component: CardHorizon,
-    slug: 'card-horizon-border',
+    slug: 'card-horizon',
     description: 'A subtle horizon top border effect on hover.',
   },
   {
@@ -61,7 +61,7 @@ export const COMPONENTS_LIST = [
   {
     name: 'Dynamic Grid Pattern',
     component: DynamicGridPatternDemo,
-    slug: 'dynamic-grid-patttern',
+    slug: 'dynamic-grid-pattern',
     description: 'A background grid pattern that highlights on hover.',
   },
 ]
