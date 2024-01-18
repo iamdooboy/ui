@@ -62,8 +62,9 @@ export const CardSpotlightBorder = ({
       {children}
       <div
         ref={divRef}
-        className='pointer-events-none absolute left-0 top-0 z-10 h-full w-full cursor-default rounded-xl border border-[#0ea5e9] bg-[transparent] p-3.5 opacity-0 transition-opacity duration-500 placeholder:select-none'
+        className='pointer-events-none absolute left-0 top-0 z-10 h-full w-full cursor-default rounded-xl bg-[transparent] p-3.5 opacity-0 transition-opacity duration-500 placeholder:select-none'
         style={{
+          border: `1px solid ${spotlightColor}`,
           opacity,
           WebkitMaskImage: `radial-gradient(70% 90px at ${position.x}px ${position.y}px, black 45%, transparent)`,
         }}

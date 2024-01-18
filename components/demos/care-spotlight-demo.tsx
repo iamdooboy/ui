@@ -1,6 +1,4 @@
-import React from 'react'
 import { CardItem } from '@/card-item'
-import { CardParallax } from '@/examples/card-parallax'
 
 import { CardSpotlight } from '../examples/card-spotlight'
 
