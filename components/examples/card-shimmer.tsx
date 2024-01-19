@@ -5,14 +5,11 @@ interface CardShimmerProps {
   className?: string
 }
 
-export const CardShimmer = ({
-  children,
-  className
-}: CardShimmerProps) => {
+export const CardShimmer = ({ children, className }: CardShimmerProps) => {
   return (
     <div
       className={cn(
-        'relative h-full w-full overflow-hidden rounded-[calc(.75em+1.5px)] border p-[1px]',
+        'relative overflow-hidden rounded-[calc(.75em+1.5px)] border p-[1px]',
         className
       )}
     >
