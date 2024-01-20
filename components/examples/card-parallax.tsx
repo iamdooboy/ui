@@ -2,12 +2,8 @@
 
 import * as React from 'react'
 
+import { ExampleProps } from '@/types/type'
 import { cn } from '@/lib/utils'
-
-interface CardParallaxProps {
-  children?: React.ReactNode
-  className?: string
-}
 
 function throttle<T extends (...args: any[]) => any>(
   func: T,
@@ -24,7 +20,7 @@ function throttle<T extends (...args: any[]) => any>(
   }
 }
 
-export const CardParallax = ({ className, children }: CardParallaxProps) => {
+export const CardParallax = ({ className, children }: ExampleProps) => {
   const [rotate, setRotate] = React.useState({ x: 0, y: 0 })
 
   //using usecallback here to mitigate eslint warning

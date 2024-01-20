@@ -1,11 +1,7 @@
+import { ExampleProps } from '@/types/type'
 import { cn } from '@/lib/utils'
 
-interface CardShimmerProps {
-  children?: React.ReactNode
-  className?: string
-}
-
-export const CardShimmer = ({ children, className }: CardShimmerProps) => {
+export const CardShimmer = ({ children, className }: ExampleProps) => {
   return (
     <div
       className={cn(

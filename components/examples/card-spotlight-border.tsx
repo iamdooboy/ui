@@ -2,13 +2,8 @@
 
 import * as React from 'react'
 
+import { SpotlightProps } from '@/types/type'
 import { cn } from '@/lib/utils'
-
-interface SpotlightProps {
-  children?: React.ReactNode
-  className?: string
-  spotlightColor?: string
-}
 
 export const CardSpotlightBorder = ({
   className,

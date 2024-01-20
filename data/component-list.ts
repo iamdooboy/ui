@@ -1,4 +1,5 @@
 import { CardAnimatedBorderDemo } from '@/components/demos/card-animated-border-demo'
+import { CardHorizonDemo } from '@/components/demos/card-horizon-demo'
 import { CardParallaxDemo } from '@/components/demos/card-parallax-demo'
 import { CardShimmerDemo } from '@/components/demos/card-shimmer-demo'
 import { CardSpotlightBorderDemo } from '@/components/demos/card-spotlight-border-demo'
@@ -42,7 +43,7 @@ export const COMPONENTS_LIST = [
   },
   {
     name: 'Card Horizon',
-    component: CardHorizon,
+    component: CardHorizonDemo,
     slug: 'card-horizon',
     description: 'A subtle horizon top border effect on hover.',
   },

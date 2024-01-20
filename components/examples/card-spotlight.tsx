@@ -2,19 +2,14 @@
 
 import * as React from 'react'
 
+import { SpotlightProps } from '@/types/type'
 import { cn } from '@/lib/utils'
-
-interface CardSpotlightProps {
-  children?: React.ReactNode
-  className?: string
-  spotlightColor?: string
-}
 
 export const CardSpotlight = ({
   className,
   children,
   spotlightColor,
-}: CardSpotlightProps) => {
+}: SpotlightProps) => {
   const divRef = React.useRef<HTMLDivElement>(null)
   const [isFocused, setIsFocused] = React.useState(false)
   const [position, setPosition] = React.useState({ x: 0, y: 0 })
