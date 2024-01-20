@@ -1,6 +1,5 @@
 import { CardItem } from '@/card-item'
-
-import { CardSpotlight } from '../examples/card-spotlight'
+import { CardSpotlight } from '@/examples/card-spotlight'
 
 export function CardSpotlightDemo() {
   return (

@@ -1,12 +1,34 @@
-export const CardAnimatedBorder = () => {
+import { cn } from '@/lib/utils'
+
+interface BorderProps {
+  children?: React.ReactNode
+  className?: string
+  from?: string
+  to?: string
+  stop?: string
+}
+
+export const CardAnimatedBorder = ({
+  children,
+  className,
+  from,
+  to,
+  stop
+}: BorderProps) => {
   return (
-    <div className='relative h-52 w-40 overflow-hidden rounded-xl border p-[1px] backdrop-blur-3xl'>
-      <span className='absolute inset-[-1000%] animate-[spin_5s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#EFD26C_0%,#6CB0EF_50%,#EFD26C_100%)]' />
-      <div className='bg-background flex h-full w-full items-center justify-center rounded-xl border backdrop-blur-3xl'>
-        <span className='text-md text-card-foreground font-light tracking-wider'>
-          Card content
-        </span>
-      </div>
+    <div
+      className={cn(
+        'relative w-full h-full overflow-hidden rounded-[calc(.75em+1.5px)] border p-[1px]',
+        className
+      )}
+    >
+      <div
+        style={{
+          backgroundImage: `conic-gradient(from 90deg at 50% 50%,${from} 0%,${to} 50%,${stop} 100%)`,
+        }}
+        className='absolute inset-[-1000%] animate-[spin_3s_linear_infinite]'
+      />
+      {children}
     </div>
   )
 }
