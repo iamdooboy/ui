@@ -4,7 +4,7 @@ import { CardHorizonDemo } from '@/components/demos/horizon-demo'
 import { InfiniteCarouselDemo } from '@/components/demos/infinite-carousel-demo'
 import { MeteorsDemo } from '@/components/demos/meteor-demo'
 import { ParallaxDemo } from '@/components/demos/parallax-demo'
-import { SpotlightDemo } from '@/components/demos/potlight-demo'
+import { SpotlightDemo } from '@/components/demos/spotlight-demo'
 import { ShimmerDemo } from '@/components/demos/shimmer-demo'
 import { SpotlightBorderDemo } from '@/components/demos/spotlight-border-demo'
 
