@@ -20,7 +20,7 @@ function throttle<T extends (...args: any[]) => any>(
   }
 }
 
-export const CardParallax = ({ className, children }: ExampleProps) => {
+export const Parallax = ({ className, children }: ExampleProps) => {
   const [rotate, setRotate] = React.useState({ x: 0, y: 0 })
 
   //using usecallback here to mitigate eslint warning

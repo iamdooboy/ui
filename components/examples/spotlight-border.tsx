@@ -5,7 +5,7 @@ import * as React from 'react'
 import { SpotlightProps } from '@/types/type'
 import { cn } from '@/lib/utils'
 
-export const CardSpotlight = ({
+export const SpotlightBorder = ({
   className,
   children,
   spotlightColor,
@@ -44,23 +44,24 @@ export const CardSpotlight = ({
 
   return (
     <div
-      ref={divRef}
+      className={cn(
+        'bg-background relative h-full w-full overflow-hidden rounded-xl',
+        className
+      )}
       onMouseMove={handleMouseMove}
       onFocus={handleFocus}
       onBlur={handleBlur}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={cn(
-        'bg-background relative h-full w-full overflow-hidden rounded-xl',
-        className
-      )}
     >
       {children}
       <div
-        className='pointer-events-none absolute -inset-px opacity-0 transition duration-300'
+        ref={divRef}
+        className='pointer-events-none absolute left-0 top-0 z-10 h-full w-full cursor-default rounded-xl bg-[transparent] p-3.5 opacity-0 transition-opacity duration-500 placeholder:select-none'
         style={{
+          border: `1px solid ${spotlightColor}`,
           opacity,
-          background: `radial-gradient(400px circle at ${position.x}px ${position.y}px, ${spotlightColor}, transparent 40%)`,
+          WebkitMaskImage: `radial-gradient(70% 90px at ${position.x}px ${position.y}px, black 45%, transparent)`,
         }}
       />
     </div>

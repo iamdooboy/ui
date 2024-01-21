@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils'
 import { Navbar } from '@/components/nav-bar'
 
 export const metadata: Metadata = {
-  title: 'UI',
+  title: 'Trendy UI',
   description:
     'A collection of UI beautifully crafted components across the web',
 }

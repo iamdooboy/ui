@@ -1,12 +1,11 @@
 import Link from 'next/link'
-
-import { Icons } from './icons'
+import { Icons } from '@/icons'
 
 export function Navbar() {
   return (
     <header className='flex items-center justify-between py-8'>
       <Link href='/'>
-        <div className='text-xl text-white'>Replicate</div>
+        <div className='text-xl font-bold text-white'>Trendy UI</div>
       </Link>
       <nav className='flex gap-6'>
         <a

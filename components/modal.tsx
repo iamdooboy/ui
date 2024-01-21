@@ -1,6 +1,6 @@
 'use client'
 
-import React, { FC, ReactNode } from 'react'
+import { FC, ReactNode } from 'react'
 import { useRouter } from 'next/navigation'
 
 import {
@@ -25,7 +25,7 @@ const Modal: FC<ModalProps> = ({ children }) => {
   return (
     <Dialog open onOpenChange={handleOnOpenChange}>
       <DialogPortal>
-        <DialogOverlay className='bg-background/10'/>
+        <DialogOverlay className='bg-background/10' />
         <DialogContent className='sm:max-w-[425px]'>{children}</DialogContent>
       </DialogPortal>
     </Dialog>

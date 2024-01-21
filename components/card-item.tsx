@@ -3,9 +3,10 @@ import { cn } from '@/lib/utils'
 interface CardItemProps {
   text: string
   className?: string
+  children?: React.ReactNode
 }
 
-export function CardItem({ text, className }: CardItemProps) {
+export function CardItem({ text, className, children }: CardItemProps) {
   return (
     <div
       className={cn(
@@ -16,6 +17,7 @@ export function CardItem({ text, className }: CardItemProps) {
       <span className='text-md text-card-foreground font-light tracking-wider'>
         {text}
       </span>
+      {children}
     </div>
   )
 }

@@ -1,6 +1,5 @@
+import { Code } from '@/code'
 import { Lang } from 'shiki'
-
-import { Code } from './code'
 
 type CodeBlockProps = {
   code: string

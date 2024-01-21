@@ -8,7 +8,7 @@ interface BorderProps {
   stop?: string
 }
 
-export const CardAnimatedBorder = ({
+export const AnimatedBorder = ({
   children,
   className,
   from,
@@ -18,7 +18,7 @@ export const CardAnimatedBorder = ({
   return (
     <div
       className={cn(
-        'relative w-full h-full overflow-hidden rounded-[calc(.75em+1.5px)] border p-[1px]',
+        'relative h-full w-full overflow-hidden rounded-[calc(.75em+1.5px)] border p-[1px]',
         className
       )}
     >

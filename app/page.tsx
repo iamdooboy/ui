@@ -9,7 +9,7 @@ export default function Home() {
         <div className='relative z-0 mx-auto max-w-3xl pb-24 pt-12 text-center'>
           <div>
             <h1 className='mb-8 text-9xl font-bold text-white md:text-5xl'>
-              Trendy Tailwind CSS components for React
+              Just React + Tailwind CSS components
             </h1>
             <p className='text-xl text-slate-500'>
               A collection of copy and paste components for your next project.

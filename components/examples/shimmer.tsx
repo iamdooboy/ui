@@ -1,7 +1,7 @@
 import { ExampleProps } from '@/types/type'
 import { cn } from '@/lib/utils'
 
-export const CardShimmer = ({ children, className }: ExampleProps) => {
+export const Shimmer = ({ children, className }: ExampleProps) => {
   return (
     <div
       className={cn(

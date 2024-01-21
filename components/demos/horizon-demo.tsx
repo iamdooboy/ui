@@ -1,10 +1,10 @@
 import { CardItem } from '@/card-item'
-import { CardHorizon } from '@/examples/card-horizon'
+import { Horizon } from '@/components/examples/horizon'
 
 export function CardHorizonDemo() {
   return (
-    <CardHorizon className='h-52 w-40'>
+    <Horizon className='h-52 w-40'>
       <CardItem text='Hover me' />
-    </CardHorizon>
+    </Horizon>
   )
 }
