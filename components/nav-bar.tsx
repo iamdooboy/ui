@@ -1,6 +1,6 @@
-import React from 'react'
 import Link from 'next/link'
-import { GitHubLogoIcon } from '@radix-ui/react-icons'
+
+import { Icons } from './icons'
 
 export function Navbar() {
   return (
@@ -15,7 +15,7 @@ export function Navbar() {
           rel='noopener noreferrer'
           className='inline-flex'
         >
-          <GitHubLogoIcon className='h-6 w-6 text-slate-400 transition-colors hover:text-white' />
+          <Icons.gitHub className='h-6 w-6 text-slate-400 transition-colors hover:text-white' />
         </a>
       </nav>
     </header>

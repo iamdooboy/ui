@@ -4,9 +4,8 @@ import { CardParallaxDemo } from '@/components/demos/card-parallax-demo'
 import { CardShimmerDemo } from '@/components/demos/card-shimmer-demo'
 import { CardSpotlightBorderDemo } from '@/components/demos/card-spotlight-border-demo'
 import { CardSpotlightDemo } from '@/components/demos/card-spotlight-demo'
-import { CardHorizon } from '@/components/examples/card-horizon'
+import { InfiniteCarouselDemo } from '@/components/demos/infinite-carousel-demo'
 import { DynamicGridPatternDemo } from '@/components/examples/dynamic-grid-pattern'
-import { InfiniteCarouselDemo } from '@/components/examples/infinite-carousel'
 import { MeteorsDemo } from '@/components/examples/meteors'
 
 export const COMPONENTS_LIST = [
