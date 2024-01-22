@@ -2,6 +2,7 @@ import { promises as fs } from 'fs'
 import path from 'path'
 import { COMPONENTS_LIST } from '@/data/component-list'
 
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import CodeBlock from '@/components/code-block'
 
 interface Props {
@@ -23,21 +24,34 @@ export default async function ComponentPage({ params }: Props) {
     (component) => component.slug === slug
   )
 
-  const filePath = `./components/examples/${currentComponent?.slug}.tsx`
+  if (!currentComponent) return <div>Can&apos;t find component</div>
 
-  const fileContent = await fs.readFile(
-    path.join(process.cwd(), filePath),
-    'utf8'
-  )
+  const compFilePath = `./components/examples/${currentComponent?.slug}.tsx`
+  const demoFilePath = `./components/demos/${currentComponent?.slug}-demo.tsx`
+
+  const comp = await fs.readFile(path.join(process.cwd(), compFilePath), 'utf8')
+  const demo = await fs.readFile(path.join(process.cwd(), demoFilePath), 'utf8')
 
   return (
-    <div className='mt-10 pb-32'>
-      <h1 className='text-md mb-2 font-light text-gray-400'>test</h1>
-      <div className='text-white'>
-        <div className='mt-8'>
-          <CodeBlock code={fileContent} lang='tsx' />
+    <div className='mt-6 w-full pb-32'>
+      <h1 className='mb-2 text-2xl font-bold text-gray-400'>{slug}</h1>
+      <div className='relative my-12 overflow-hidden rounded-xl border bg-[radial-gradient(#ffffff12_1px,transparent_1px)] bg-[size:16px_16px] p-12 py-10'>
+        <div className='flex h-40 w-full items-center justify-center'>
+          <currentComponent.component />
         </div>
       </div>
+      <Tabs defaultValue='code'>
+        <TabsList className='grid w-full grid-cols-2'>
+          <TabsTrigger value='code'>Code</TabsTrigger>
+          <TabsTrigger value='usage'>Usage</TabsTrigger>
+        </TabsList>
+        <TabsContent value='code'>
+          <CodeBlock code={comp} lang='tsx' />
+        </TabsContent>
+        <TabsContent value='usage'>
+          <CodeBlock code={demo} lang='tsx' />
+        </TabsContent>
+      </Tabs>
     </div>
   )
 }

@@ -29,19 +29,3 @@ export const Meteors = ({
     </>
   )
 }
-
-export const MeteorsDemo = () => {
-  return (
-    <div className='relative'>
-      {/* <div className='absolute inset-0 h-full w-full scale-[0.80] rounded-full bg-red-500 bg-gradient-to-r from-blue-500 to-teal-500 blur-3xl' /> */}
-      <div className='relative h-52 w-40 overflow-hidden rounded-xl border'>
-        <div className='bg-background flex h-full w-full items-center justify-center rounded-xl'>
-          <span className='text-md text-card-foreground font-light tracking-wider'>
-            Card content
-          </span>
-          <Meteors number={20} />
-        </div>
-      </div>
-    </div>
-  )
-}
