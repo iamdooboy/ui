@@ -34,7 +34,7 @@ export default async function ComponentPage({ params }: Props) {
 
   return (
     <div className='mt-6 w-full pb-32'>
-      <h1 className='mb-2 text-2xl font-bold text-gray-400'>{slug}</h1>
+      <h1 className='mb-2 text-2xl font-bold text-gray-400'>{currentComponent.name}</h1>
       <div className='relative my-12 overflow-hidden rounded-xl border bg-[radial-gradient(#ffffff12_1px,transparent_1px)] bg-[size:16px_16px] p-12 py-10'>
         <div className='flex h-40 w-full items-center justify-center'>
           <currentComponent.component />
