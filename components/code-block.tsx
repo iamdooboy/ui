@@ -10,9 +10,7 @@ type CodeBlockProps = {
 const CodeBlock: React.FC<CodeBlockProps> = ({ code, lang }) => {
   return (
     <div className='relative overflow-x-auto rounded-md border border-neutral-800 p-4'>
-      <div className='pt-10'>
-        <Code code={code} lang={lang} />
-      </div>
+      <Code code={code} lang={lang} />
     </div>
   )
 }

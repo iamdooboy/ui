@@ -7,10 +7,10 @@ import { cn } from '@/lib/utils'
 
 interface CopyButtonProps {
   className?: string
-  clipboard: string
+  copyToClipboard: string
 }
 
-export function CopyButton({ className, clipboard }: CopyButtonProps) {
+export function CopyButton({ className, copyToClipboard }: CopyButtonProps) {
   const [hasCopied, setHasCopied] = React.useState(false)
 
   React.useEffect(() => {
@@ -23,7 +23,7 @@ export function CopyButton({ className, clipboard }: CopyButtonProps) {
     <button
       className={cn(className)}
       onClick={() => {
-        navigator.clipboard.writeText(clipboard)
+        navigator.clipboard.writeText(copyToClipboard)
         setHasCopied(true)
       }}
     >
@@ -32,7 +32,6 @@ export function CopyButton({ className, clipboard }: CopyButtonProps) {
       ) : (
         <Copy className='mr-2 h-4 w-4' />
       )}
-      {hasCopied ? 'Copied' : 'Copy'}
     </button>
   )
 }
