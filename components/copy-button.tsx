@@ -27,7 +27,7 @@ export function CopyButton({ className, copyToClipboard }: CopyButtonProps) {
         setHasCopied(true)
       }}
     >
-      {hasCopied ? <Check className='h-4 w-4' /> : <Copy className='h-4 w-4' />}
+      {hasCopied ? <Check className='size-4' /> : <Copy className='size-4' />}
     </button>
   )
 }

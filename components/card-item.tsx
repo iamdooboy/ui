@@ -10,7 +10,7 @@ export function CardItem({ text, className, children }: CardItemProps) {
   return (
     <div
       className={cn(
-        'bg-background flex h-full w-full items-center justify-center rounded-xl border',
+        'bg-background flex size-full items-center justify-center rounded-xl border',
         className
       )}
     >

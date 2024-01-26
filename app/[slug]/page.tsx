@@ -26,6 +26,8 @@ export default async function ComponentPage({ params }: Props) {
 
   if (!currentComponent) return <div>Can&apos;t find component</div>
 
+  const twConfig = JSON.stringify(currentComponent?.twConfig, null, 2)
+
   const compFilePath = `./components/examples/${currentComponent?.slug}.tsx`
   const demoFilePath = `./components/demos/${currentComponent?.slug}-demo.tsx`
 
@@ -34,7 +36,9 @@ export default async function ComponentPage({ params }: Props) {
 
   return (
     <div className='mt-6 w-full pb-32'>
-      <h1 className='mb-2 text-2xl font-bold text-gray-400'>{currentComponent.name}</h1>
+      <h1 className='mb-2 text-2xl font-bold text-gray-400'>
+        {currentComponent.name}
+      </h1>
       <div className='relative my-12 overflow-hidden rounded-xl border bg-[radial-gradient(#ffffff12_1px,transparent_1px)] bg-[size:16px_16px] p-12 py-10'>
         <div className='flex h-40 w-full items-center justify-center'>
           <currentComponent.component />
@@ -47,6 +51,20 @@ export default async function ComponentPage({ params }: Props) {
         </TabsList>
         <TabsContent value='code'>
           <CodeBlock code={comp} lang='tsx' />
+          {Boolean(twConfig) && (
+            <div className='my-10'>
+              <div className='mb-2'>
+                <span className='text-xl text-gray-400'>
+                  tailwind.config.js
+                </span>
+              </div>
+              <CodeBlock
+                code={twConfig}
+                lang='tsx'
+                fileName='tailwind.config.js'
+              />
+            </div>
+          )}
         </TabsContent>
         <TabsContent value='usage'>
           <CodeBlock code={demo} lang='tsx' />

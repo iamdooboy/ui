@@ -14,7 +14,7 @@ export function Navbar() {
           rel='noopener noreferrer'
           className='inline-flex'
         >
-          <Icons.gitHub className='h-6 w-6 text-slate-400 transition-colors hover:text-white' />
+          <Icons.gitHub className='size-6 text-slate-400 transition-colors hover:text-white' />
         </a>
       </nav>
     </header>

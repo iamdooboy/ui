@@ -19,7 +19,7 @@ export const Horizon = ({ children, className }: ExampleProps) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       className={cn(
-        'relative flex h-full w-full justify-center rounded-xl',
+        'relative flex size-full justify-center rounded-xl',
         className
       )}
     >

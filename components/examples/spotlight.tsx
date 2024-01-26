@@ -51,7 +51,7 @@ export const Spotlight = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       className={cn(
-        'bg-background relative h-full w-full overflow-hidden rounded-xl',
+        'bg-background relative size-full overflow-hidden rounded-xl',
         className
       )}
     >

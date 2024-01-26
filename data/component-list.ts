@@ -8,6 +8,48 @@ import { ShimmerDemo } from '@/components/demos/shimmer-demo'
 import { SpotlightBorderDemo } from '@/components/demos/spotlight-border-demo'
 import { SpotlightDemo } from '@/components/demos/spotlight-demo'
 
+const TWCONFIG = {
+  meteors: {
+    'module.exports': {
+      theme: {
+        extend: {
+          keyframes: {
+            meteor: {
+              '0%': { transform: 'rotate(215deg) translateX(0)', opacity: '1' },
+              '70%': { opacity: '1' },
+              '100%': {
+                transform: 'rotate(215deg) translateX(-500px)',
+                opacity: '0',
+              },
+            },
+          },
+          animation: {
+            'meteor-effect': 'meteor 5s linear infinite',
+          },
+        },
+      },
+    },
+  },
+  'infinite-scroll': {
+    'module.exports': {
+      theme: {
+        extend: {
+          keyframes: {
+            'infinite-scroll': {
+              from: { transform: 'translateX(0)' },
+              to: { transform: 'translateX(calc(-50% - var(--gap)/2))' },
+            },
+          },
+          animation: {
+            'infinite-scroll':
+              'infinite-scroll var(--duration) linear infinite',
+          },
+        },
+      },
+    },
+  },
+}
+
 export const COMPONENTS_LIST = [
   {
     name: 'Parallax',
@@ -51,12 +93,14 @@ export const COMPONENTS_LIST = [
     component: InfiniteCarouselDemo,
     slug: 'infinite-carousel',
     description: 'A carousel component with infinite motion.',
+    twConfig: TWCONFIG['infinite-scroll'],
   },
   {
     name: 'Meteors',
     component: MeteorsDemo,
     slug: 'meteors',
     description: 'A continuous meteor shower effect.',
+    twConfig: TWCONFIG['meteors'],
   },
   {
     name: 'Dynamic Grid Pattern',

@@ -45,7 +45,7 @@ export const SpotlightBorder = ({
   return (
     <div
       className={cn(
-        'bg-background relative h-full w-full overflow-hidden rounded-xl',
+        'bg-background relative size-full overflow-hidden rounded-xl',
         className
       )}
       onMouseMove={handleMouseMove}
@@ -57,7 +57,7 @@ export const SpotlightBorder = ({
       {children}
       <div
         ref={divRef}
-        className='pointer-events-none absolute left-0 top-0 z-10 h-full w-full cursor-default rounded-xl bg-[transparent] p-3.5 opacity-0 transition-opacity duration-500 placeholder:select-none'
+        className='pointer-events-none absolute left-0 top-0 z-10 size-full cursor-default rounded-xl bg-[transparent] p-3.5 opacity-0 transition-opacity duration-500 placeholder:select-none'
         style={{
           border: `1px solid ${spotlightColor}`,
           opacity,
