@@ -1,4 +1,4 @@
-import { cn } from '@/lib/utils'
+import { cn } from "@/lib/utils"
 
 interface CardItemProps {
   text: string
@@ -10,11 +10,11 @@ export function CardItem({ text, className, children }: CardItemProps) {
   return (
     <div
       className={cn(
-        'bg-background flex size-full items-center justify-center rounded-xl border',
+        "bg-background flex size-full items-center justify-center rounded-xl border",
         className
       )}
     >
-      <span className='text-md text-card-foreground font-light tracking-wider'>
+      <span className="text-md text-card-foreground font-light tracking-wider">
         {text}
       </span>
       {children}

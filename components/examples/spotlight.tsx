@@ -1,14 +1,14 @@
-'use client'
+"use client"
 
-import * as React from 'react'
+import * as React from "react"
 
-import { SpotlightProps } from '@/types/type'
-import { cn } from '@/lib/utils'
+import { cn } from "@/lib/utils"
+import { SpotlightProps } from "@/types/type"
 
 export const Spotlight = ({
   className,
   children,
-  spotlightColor,
+  spotlightColor
 }: SpotlightProps) => {
   const divRef = React.useRef<HTMLDivElement>(null)
   const [isFocused, setIsFocused] = React.useState(false)
@@ -51,16 +51,16 @@ export const Spotlight = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       className={cn(
-        'bg-background relative size-full overflow-hidden rounded-xl',
+        "bg-background relative size-full overflow-hidden rounded-xl",
         className
       )}
     >
       {children}
       <div
-        className='pointer-events-none absolute -inset-px opacity-0 transition duration-300'
+        className="pointer-events-none absolute -inset-px opacity-0 transition duration-300"
         style={{
           opacity,
-          background: `radial-gradient(400px circle at ${position.x}px ${position.y}px, ${spotlightColor}, transparent 40%)`,
+          background: `radial-gradient(400px circle at ${position.x}px ${position.y}px, ${spotlightColor}, transparent 40%)`
         }}
       />
     </div>
