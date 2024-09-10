@@ -58,14 +58,6 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)"
       },
       keyframes: {
-        "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" }
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" }
-        },
         "infinite-scroll": {
           from: { transform: "translateX(0)" },
           to: { transform: "translateX(calc(-50% - var(--gap)/2))" }
@@ -80,8 +72,6 @@ const config: Config = {
         }
       },
       animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
         "infinite-scroll": "infinite-scroll var(--duration) linear infinite",
         "meteor-effect": "meteor 5s linear infinite"
       }
