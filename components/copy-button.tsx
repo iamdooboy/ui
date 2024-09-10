@@ -1,9 +1,9 @@
-'use client'
+"use client"
 
-import * as React from 'react'
-import { Check, Copy } from 'lucide-react'
+import { Check, Copy } from "lucide-react"
+import * as React from "react"
 
-import { cn } from '@/lib/utils'
+import { cn } from "@/lib/utils"
 
 interface CopyButtonProps {
   className?: string
@@ -21,13 +21,13 @@ export function CopyButton({ className, copyToClipboard }: CopyButtonProps) {
 
   return (
     <button
-      className={cn('bg-muted rounded-md p-3', className)}
+      className={cn("bg-muted rounded-md p-3", className)}
       onClick={() => {
         navigator.clipboard.writeText(copyToClipboard)
         setHasCopied(true)
       }}
     >
-      {hasCopied ? <Check className='size-4' /> : <Copy className='size-4' />}
+      {hasCopied ? <Check className="size-4" /> : <Copy className="size-4" />}
     </button>
   )
 }

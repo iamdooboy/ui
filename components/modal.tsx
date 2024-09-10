@@ -1,14 +1,14 @@
-'use client'
+"use client"
 
-import { FC, ReactNode } from 'react'
-import { useRouter } from 'next/navigation'
+import { useRouter } from "next/navigation"
+import { FC, ReactNode } from "react"
 
 import {
   Dialog,
   DialogContent,
   DialogOverlay,
-  DialogPortal,
-} from '@/components/ui/dialog'
+  DialogPortal
+} from "@/components/ui/dialog"
 
 interface ModalProps {
   children: ReactNode
@@ -19,14 +19,14 @@ const Modal: FC<ModalProps> = ({ children }) => {
 
   const handleOnOpenChange = (open: boolean) => {
     if (!open) {
-      router.push('/')
+      router.push("/")
     }
   }
   return (
     <Dialog open onOpenChange={handleOnOpenChange}>
       <DialogPortal>
-        <DialogOverlay className='bg-background/10' />
-        <DialogContent className='sm:max-w-[425px]'>{children}</DialogContent>
+        <DialogOverlay className="bg-background/10" />
+        <DialogContent className="sm:max-w-[425px]">{children}</DialogContent>
       </DialogPortal>
     </Dialog>
   )

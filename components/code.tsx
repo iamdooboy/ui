@@ -1,8 +1,8 @@
-import { Lang } from 'shiki'
+import { Lang } from "shiki"
 
-import { highlight } from '@/lib/shiki'
+import { highlight } from "@/lib/shiki"
 
-import { CopyButton } from './copy-button'
+import { CopyButton } from "./copy-button"
 
 type CodeProps = {
   code: string
@@ -10,11 +10,11 @@ type CodeProps = {
 }
 
 export const Code = async ({ code, lang }: CodeProps) => {
-  const component = await highlight(code, 'github-dark', lang)
+  const component = await highlight(code, "github-dark", lang)
 
   return (
-    <div className='relative'>
-      <CopyButton className='absolute right-0 top-0' copyToClipboard={code} />
+    <div className="relative">
+      <CopyButton className="absolute right-0 top-0" copyToClipboard={code} />
       <div dangerouslySetInnerHTML={{ __html: component }} />
     </div>
   )

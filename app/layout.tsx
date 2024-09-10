@@ -1,15 +1,14 @@
-import type { Metadata } from 'next'
-import { GeistSans } from 'geist/font/sans'
+import { GeistSans } from "geist/font/sans"
+import type { Metadata } from "next"
 
-import './globals.css'
+import "./globals.css"
 
-import { cn } from '@/lib/utils'
-import { Navbar } from '@/components/nav-bar'
+import { Navbar } from "@/components/nav-bar"
+import { cn } from "@/lib/utils"
 
 export const metadata: Metadata = {
-  title: 'Trendy UI',
-  description:
-    'A collection of UI beautifully crafted components across the web',
+  title: "UI",
+  description: "A collection of UI beautifully crafted components"
 }
 
 export default function RootLayout(props: {
@@ -17,30 +16,28 @@ export default function RootLayout(props: {
   modal: React.ReactNode
 }) {
   return (
-    <html lang='en'>
+    <html lang="en">
       <body
-        className={cn(GeistSans.className, 'dark')}
+        className={cn("bg-background", GeistSans.className, "dark")}
         suppressHydrationWarning
       >
-        <div className='bg-background'>
-          <div className='px-4s mx-auto flex min-h-screen max-w-7xl flex-col'>
-            <Navbar />
-            <main className='flex-1'>{props.children}</main>
-            {/* {props.modal} */}
-            <footer className='mt-32 flex items-center justify-center py-8'>
-              <span className='text-sm text-gray-400'>
-                Made by
-                <a
-                  href='https://github.com/iamdooboy'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='ml-1 text-blue-400'
-                >
-                  Duy Le
-                </a>
-              </span>
-            </footer>
-          </div>
+        <div className="px-4 mx-auto flex min-h-screen max-w-7xl flex-col">
+          <Navbar />
+          <main className="flex-1">{props.children}</main>
+          {/* {props.modal} */}
+          <footer className="mt-32 flex items-center justify-center py-8">
+            <span className="text-sm text-gray-400">
+              Made by
+              <a
+                href="https://github.com/iamdooboy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-1 text-blue-400"
+              >
+                Duy Le
+              </a>
+            </span>
+          </footer>
         </div>
       </body>
     </html>
